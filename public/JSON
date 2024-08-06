@@ -1,0 +1,74 @@
+[
+  {
+    "image": "https://i.ibb.co/HDsLftW/images-68.jpg",
+    "estate_title": "Ocean View Penthouse",
+    "id": 1,
+    "segment_name": "Penthouse",
+    "description": "A luxurious penthouse with stunning ocean views, modern amenities, and an expansive terrace.",
+    "price": "$5,000,000",
+    "status": "sale",
+    "area": "3500 sq ft",
+    "location": "Miami Beach, FL",
+    "facilities": ["living room", "swimming pool", "kitchen", "gym", "private elevator"]
+  },
+  {
+    "image": "https://i.ibb.co/vQ1D3yk/images-69.jpg",
+    "estate_title": "Beachfront Paradise",
+    "id": 2,
+    "segment_name": "Beachfront Property",
+    "description": "An exclusive beachfront property with direct access to a private beach, offering serene views and unparalleled privacy.",
+    "price": "$8,500,000",
+    "status": "sale",
+    "area": "5000 sq ft",
+    "location": "Malibu, CA",
+    "facilities": ["living room", "swimming pool", "kitchen", "private beach", "outdoor shower"]
+  },
+  {
+    "image": "https://i.ibb.co/520VPmw/download-63.jpg",
+    "estate_title": "Private Island Retreat",
+    "id": 3,
+    "segment_name": "Private Island",
+    "description": "A secluded private island with luxurious accommodations, pristine beaches, and world-class amenities.",
+    "price": "$25,000,000",
+    "status": "sale",
+    "area": "10000 sq ft",
+    "location": "Exuma, Bahamas",
+    "facilities": ["living room", "swimming pool", "kitchen", "private beach", "helipad"]
+  },
+  {
+    "image": "https://i.ibb.co/wwpSsbT/images-70.jpg",
+    "estate_title": "Luxury Hillside Villa",
+    "id": 4,
+    "segment_name": "Villa",
+    "description": "A magnificent hillside villa with panoramic views, elegant interiors, and top-notch facilities.",
+    "price": "$3,200,000",
+    "status": "rent",
+    "area": "4000 sq ft",
+    "location": "Tuscany, Italy",
+    "facilities": ["living room", "swimming pool", "kitchen", "wine cellar", "home theater"]
+  },
+  {
+    "image": "https://i.ibb.co/71hs1XZ/download-64.jpg",
+    "estate_title": "Grand Urban Mansion",
+    "id": 5,
+    "segment_name": "Mansion",
+    "description": "A sprawling mansion in the heart of the city with exquisite interiors, a private garden, and state-of-the-art facilities.",
+    "price": "$12,000,000",
+    "status": "sale",
+    "area": "7000 sq ft",
+    "location": "New York, NY",
+    "facilities": ["living room", "swimming pool", "kitchen", "private garden", "home theater"]
+  },
+  {
+    "image": "https://i.ibb.co/P9wpKGf/download-65.jpg",
+    "estate_title": "Luxury Mountain Resort",
+    "id": 6,
+    "segment_name": "Resort",
+    "description": "A high-end mountain resort offering breathtaking views, luxurious accommodations, and top-notch amenities.",
+    "price": "$1,500 per night",
+    "status": "rent",
+    "area": "2000 sq ft",
+    "location": "Aspen, CO",
+    "facilities": ["living room", "swimming pool", "kitchen", "spa", "ski-in/ski-out access"]
+  }
+]
