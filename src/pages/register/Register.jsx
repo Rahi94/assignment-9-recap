@@ -6,16 +6,26 @@ import { useForm } from 'react-hook-form';
 
 const Register = () => {
 
-        const {createUser} = useContext(AuthContext)
-        console.log(createUser)
+    const { createUser } = useContext(AuthContext)
+    console.log(createUser)
 
-        const {
-            register,
-            handleSubmit,
-            watch,
-            formState: { errors },
-          } = useForm()
-          const onSubmit = (data) => console.log(data)
+    const {
+        register,
+        handleSubmit,
+       
+        formState: { errors },
+    } = useForm();
+
+    const onSubmit = data => {
+        // console.log(data)
+
+        const { email, password } = data;
+        createUser(email, password)
+            .then(result => {
+                console.log(result);
+            })
+            
+    }
 
     return (
         <div>
@@ -33,25 +43,25 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input type="text" placeholder="Full name" className="input input-bordered" required 
-                                 {...register("FullName", { required: true })}
+                                <input type="text" placeholder="Full name" className="input input-bordered" required
+                                    {...register("FullName", { required: true })}
                                 />
                                 {errors.FullName && <span className='text-red-500'>This field is required</span>}
-                                
+
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" placeholder="Email" className="input input-bordered" required 
-                                {...register("Email", { required: true })}
+                                <input type="email" placeholder="Email" className="input input-bordered" required
+                                    {...register("Email", { required: true })}
                                 />
                                 {errors.Email && <span className='text-red-500'>This field is required</span>}
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" placeholder="password" className="input input-bordered" required 
-                                {...register("Password", { required: true })}
+                                <input type="password" placeholder="password" className="input input-bordered" required
+                                    {...register("Password", { required: true })}
                                 />
                                 {errors.Password && <span className='text-red-500'>This field is required</span>}
                                 <label className="label">
