@@ -7,7 +7,7 @@ import { useForm } from 'react-hook-form';
 const Register = () => {
 
     const { createUser } = useContext(AuthContext)
-    console.log(createUser)
+    // console.log(createUser)
 
     const {
         register,
