@@ -3,6 +3,7 @@ import Navbar from '../../components/Navbar';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../components/firebaseProvider/FirebaseProvider';
 import { useForm } from 'react-hook-form';
+import SocialLogin from '../../socialLogin/SocialLogin';
 
 const Login = () => {
 
@@ -70,6 +71,9 @@ const Login = () => {
                                 <button className="btn btn-primary">Login</button>
                             </div>
                         </form>
+                        <div className='flex justify-around pb-4 font-semibold'>
+                        <SocialLogin></SocialLogin>
+                        </div>
                     </div>
                 </div>
             </div>
