@@ -18,12 +18,15 @@ const Register = () => {
 
     const onSubmit = data => {
         // console.log(data)
-
-        const { email, password } = data;
-        createUser(email, password)
-            .then(result => {
-                console.log(result);
-            })
+        // const {email, password} = data;
+        // console.log(data.Email, password)
+        createUser(data.Email, data.Password)
+        .then(result=>{
+            console.log(result);
+        })
+        .catch(error=>{
+            console.log(error)
+        })
             
     }
 
