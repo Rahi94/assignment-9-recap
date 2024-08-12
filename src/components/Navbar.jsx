@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from './firebaseProvider/FirebaseProvider';
 
 const Navbar = () => {
+
+    const {logout, user} = useContext(AuthContext)
+    console.log(user)
 
     const navLinks = <>
 
@@ -44,6 +48,9 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 <NavLink to='/login' className="btn font-bold bg-green-500 text-white">Login</NavLink>
+            </div>
+            <div className="">
+                <button onClick={logout} className="btn font-bold bg-green-500 text-white">Logout</button>
             </div>
             {/*theme  */}
             <label className="swap swap-rotate">
