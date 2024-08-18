@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import Banner from '../../components/Banner';
+import Slider from '../../components/Slider';
 
 const Home = () => {
     return (
@@ -9,6 +10,7 @@ const Home = () => {
             
             <div className='w-full'>
             <Banner></Banner>
+            <Slider></Slider>
             </div>
         </div>
     );
