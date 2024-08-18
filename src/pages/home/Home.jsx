@@ -1,11 +1,15 @@
 import React from 'react';
 import Navbar from '../../components/Navbar';
+import Banner from '../../components/Banner';
 
 const Home = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <p className="text-3xl">This is home page!</p>
+            
+            <div className='w-full'>
+            <Banner></Banner>
+            </div>
         </div>
     );
 };

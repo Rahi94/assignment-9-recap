@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, signOut, TwitterAuthProvider, FacebookAuthProvider } from "firebase/auth";
 import auth from '../../firebase/firebase.config';
 export const AuthContext = createContext(null);
 
@@ -7,6 +7,8 @@ export const AuthContext = createContext(null);
 // social auth provider
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
+const twitterProvider = new TwitterAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
 
 
 
@@ -35,6 +37,16 @@ const githubLogin = ()=>{
     return signInWithPopup(auth, githubProvider)
    
    }
+// twitter login
+const twitterLogin = ()=>{
+    return signInWithPopup(auth, twitterProvider)
+   
+   }
+// facebook login
+const facebookLogin = ()=>{
+    return signInWithPopup(auth, facebookProvider)
+   
+   }
 
 //    logout user
 const logout = ()=>{
@@ -59,7 +71,9 @@ useEffect(()=>{
         googleLogin,
         githubLogin,
         logout,
-        user
+        user,
+        twitterLogin,
+        facebookLogin
     };
     return (
         <AuthContext.Provider value={allValue}>
