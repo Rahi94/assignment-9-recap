@@ -1,9 +1,16 @@
 import React from 'react';
+import Navbar from '../Navbar';
+import { useParams } from 'react-router-dom';
+import Card from '../card/Card';
 
 const CardDetails = () => {
+    const {id} = useParams();
+    const {price} = Card;
     return (
         <div>
-            <h3>Your details are loading soon!!</h3>
+            <Navbar></Navbar>
+            <p>{price}</p>
+            
         </div>
     );
 };

@@ -14,36 +14,47 @@ const facebookProvider = new FacebookAuthProvider();
 
 const FirebaseProvider = ({children}) => {
     const [user, setUser] = useState(null)
+    const [loading, setLoading] = useState(true)
     // console.log(user)
 
 // create user
 const createUser = (email, password)=>{
+    setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password)
 
 }
 
 const signInUser = (email, password)=>{
+
+    setLoading(true)
    return signInWithEmailAndPassword(auth, email, password)
 
 }
 
 // google login
 const googleLogin = ()=>{
+    setLoading(true)
  return signInWithPopup(auth, googleProvider)
 
 }
 // github login
 const githubLogin = ()=>{
+    setLoading(true)
+
     return signInWithPopup(auth, githubProvider)
    
    }
 // twitter login
 const twitterLogin = ()=>{
+    setLoading(true)
+
     return signInWithPopup(auth, twitterProvider)
    
    }
 // facebook login
 const facebookLogin = ()=>{
+    setLoading(true)
+
     return signInWithPopup(auth, facebookProvider)
    
    }
@@ -52,6 +63,8 @@ const facebookLogin = ()=>{
 const logout = ()=>{
     signOut(auth)
     setUser(null)
+    setLoading(true)
+
 }
 
 // observer
@@ -59,6 +72,7 @@ useEffect(()=>{
     onAuthStateChanged(auth, (user) => {
         if (user) {
           setUser(user)
+          setLoading(false)
         } 
       });
 },[])
@@ -71,6 +85,7 @@ useEffect(()=>{
         googleLogin,
         githubLogin,
         logout,
+        loading,
         user,
         twitterLogin,
         facebookLogin
