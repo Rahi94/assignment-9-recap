@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Card = ({ data }) => {
-    const { location, image, segment_name, estate_title, price, description, status } = data;
+    const { location, image, segment_name, estate_title, price, description, status, id } = data;
     return (
         <div className=''>
             <div className=" bg-base-100 w-96 shadow-xl mt-4">
@@ -17,7 +18,9 @@ const Card = ({ data }) => {
                     <p>Price: {price}</p>
                     <p>Location: {location}</p>
                     <div className="card-actions mt-3 text-center items-center justify-center">
-                        <button className="btn btn-primary">More Details</button>
+                        <button className="btn btn-primary"> 
+                            <Link to={`/cardDetails/${id}`}> More Details</Link>
+                        </button>
                     </div>
                 </div>
             </div>
