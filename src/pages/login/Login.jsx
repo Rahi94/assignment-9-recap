@@ -1,35 +1,40 @@
 import React, { useContext } from 'react';
 import Navbar from '../../components/Navbar';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../components/firebaseProvider/FirebaseProvider';
 import { useForm } from 'react-hook-form';
 import SocialLogin from '../../socialLogin/SocialLogin';
 
 const Login = () => {
+    const location = useLocation()
+    const navigate = useNavigate();
+    console.log('location in the login page', location)
 
     const { signInUser } = useContext(AuthContext)
 
     const {
         register,
         handleSubmit,
-        
+
         formState: { errors },
     } = useForm()
-    const onSubmit = (data) =>{
+    const onSubmit = (data) => {
 
         // const {Email, Password} = data
-        
+
         signInUser(data.Email, data.Password)
-        // console.log(data.Email)
-        .then((result)=>{
-            console.log(result)
-        })
-        .catch((error)=>{
-            console.error(error)
-        })
+            // console.log(data.Email)
+            .then((result) => {
+                console.log(result)
+                // navigate after login
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch((error) => {
+                console.error(error)
+            })
     }
 
-   
+
 
 
     return (
@@ -72,7 +77,7 @@ const Login = () => {
                             </div>
                         </form>
                         <div className='flex justify-around pb-4 font-semibold'>
-                        <SocialLogin></SocialLogin>
+                            <SocialLogin></SocialLogin>
                         </div>
                     </div>
                 </div>

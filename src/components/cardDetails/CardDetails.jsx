@@ -2,14 +2,20 @@ import React from 'react';
 import Navbar from '../Navbar';
 import { useParams } from 'react-router-dom';
 import Card from '../card/Card';
+import { useContext } from 'react';
+import { AuthContext } from '../firebaseProvider/FirebaseProvider';
 
 const CardDetails = () => {
+    
+
     const {id} = useParams();
-    const {price} = Card;
+    console.log(id)
+    
     return (
         <div>
             <Navbar></Navbar>
-            <p>{price}</p>
+            <h3>hello</h3>
+            
             
         </div>
     );
