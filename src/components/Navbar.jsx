@@ -4,7 +4,7 @@ import { AuthContext } from './firebaseProvider/FirebaseProvider';
 
 const Navbar = () => {
 
-    const {logout, user} = useContext(AuthContext)
+    const { logout, user } = useContext(AuthContext)
     console.log(user)
 
     const navLinks = <>
@@ -47,11 +47,15 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <NavLink to='/login' className="btn font-bold bg-green-500 text-white">Login</NavLink>
+                {
+                    user ?
+                        <button onClick={logout} className="btn font-bold bg-blue-500 text-white">Logout</button>
+                        :
+                        <NavLink to='/login' className="btn font-bold bg-green-500 text-white">Login</NavLink>
+
+                }
             </div>
-            <div className="">
-                <button onClick={logout} className="btn font-bold bg-green-500 text-white">Logout</button>
-            </div>
+
             {/*theme  */}
             <label className="swap swap-rotate">
                 {/* this hidden checkbox controls the state */}

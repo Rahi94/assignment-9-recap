@@ -61,20 +61,21 @@ const facebookLogin = ()=>{
 
 //    logout user
 const logout = ()=>{
+    setLoading(true)
     signOut(auth)
     setUser(null)
-    setLoading(true)
 
 }
 
 // observer
 useEffect(()=>{
-    onAuthStateChanged(auth, (user) => {
+     const unSubscribe = onAuthStateChanged(auth, (user) => {
         if (user) {
           setUser(user)
           setLoading(false)
         } 
       });
+      return unSubscribe;
 },[])
 
 
