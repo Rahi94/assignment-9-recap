@@ -9,9 +9,9 @@ const Navbar = () => {
 
     const navLinks = <>
 
-        <NavLink to='/' className='font-bold text-xl'>Home</NavLink>
-        <NavLink to='/login' className='font-bold text-xl'>Login</NavLink>
-        <NavLink to='/register' className='font-bold text-xl'>Register</NavLink>
+        <NavLink to='/' className={({ isActive }) => isActive ? 'font-bold text-xl text-green-500' : 'font-bold text-xl'}>Home</NavLink>
+        <NavLink to='/login' className={({ isActive }) => isActive ? 'font-bold text-xl text-green-500' : 'font-bold text-xl'}>Login</NavLink>
+        <NavLink to='/register' className={({ isActive }) => isActive ? 'font-bold text-xl text-green-500' : 'font-bold text-xl'}>Register</NavLink>
 
     </>
 

@@ -1,15 +1,16 @@
 import React from 'react';
 import Navbar from '../Navbar';
-import { useParams } from 'react-router-dom';
+import { useLoaderData, useParams } from 'react-router-dom';
 import Card from '../card/Card';
 import { useContext } from 'react';
 import { AuthContext } from '../firebaseProvider/FirebaseProvider';
 
 const CardDetails = () => {
-    
+    const cardDetails = useLoaderData();
+    console.log(cardDetails)
 
     const {id} = useParams();
-    console.log(id)
+    // console.log(id)
     
     return (
         <div>

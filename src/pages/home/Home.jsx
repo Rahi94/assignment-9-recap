@@ -8,7 +8,7 @@ import Footer from '../../components/footer/Footer';
 
 const Home = () => {
     const allData = useLoaderData()
-    // console.log(data)
+    console.log(allData)
     return (
         <div>
             <Navbar></Navbar>

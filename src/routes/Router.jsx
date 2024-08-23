@@ -19,18 +19,20 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: ()=> fetch('/data.JSON')
+                loader: () => fetch('/data.JSON')
             },
             {
                 path: '/cardDetails/:id',
-                element:<PrivateRoute><CardDetails></CardDetails></PrivateRoute>
+                element: <PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
+                loader: ({ params }) =>
+                    fetch(`http://localhost:5173/cardDetails/${params.id}`)
             },
             {
                 path: '/login',
                 element: <Login></Login>
             },
             {
-                path:'/register',
+                path: '/register',
                 element: <Register></Register>
             }
         ]
